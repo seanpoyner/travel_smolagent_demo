@@ -1,0 +1,7 @@
+# Pyhton requirements
+
+smolagents
+requests
+pytz
+pyyaml
+gradio
