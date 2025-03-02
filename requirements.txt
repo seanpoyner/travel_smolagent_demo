@@ -1,7 +1,14 @@
-# Pyhton requirements
+# This file is part of the Smol Agents project.
 
+# Python requirements
 smolagents
 requests
 pytz
 pyyaml
 gradio
+tools
+markdownify
+requests
+duckduckgo_search
+pandas
+dotenv
