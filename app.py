@@ -17,6 +17,7 @@ import dotenv
 import sys
 sys.path.append('./tools')
 from final_answer import FinalAnswerTool
+from today import CurrentDateTool
 
 # %%
 # Set the os environment variable for the Huggingface API token
@@ -358,6 +359,8 @@ def get_hotels(
 # Initialize final_answer tool
 final_answer = FinalAnswerTool()
 
+# Initialize CurrentDateTool tool
+current_date = CurrentDateTool()
 # %%
 # Define the model parameters
 model = HfApiModel(
@@ -385,6 +388,7 @@ agent = CodeAgent(
         get_hotels,
         get_flight_information,
         final_answer,
+        current_date,
     ],
     max_steps=5,
     verbosity_level=1,
@@ -394,7 +398,6 @@ agent = CodeAgent(
     description=None,
     prompt_templates=prompt_templates
 )
-
 # %%
 # Launch the agent in the Gradio UI
 GradioUI(agent).launch()
